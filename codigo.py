@@ -5,7 +5,7 @@ import numpy as np
 import urllib.request
 from streamlit_option_menu import option_menu
 #import plotly.figure_factory as ff
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import plotly.express as px
 #import scipy
 
