@@ -9,7 +9,9 @@ import plotly.express as px
 import plotly.figure_factory as ff
 import scipy
 
-
+st.set_page_config(layout='wide', initial_sidebar_state='expanded')
+with open('upch.css') as f:
+    st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
 with st.sidebar: 
     st.markdown("###")
     st.sidebar.header('Programación Avanzada')
