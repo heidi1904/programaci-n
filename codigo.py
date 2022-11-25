@@ -12,4 +12,4 @@ with st.sidebar:
     menu_icon='cast',
     default_idex=0,
   )
-  
+   
