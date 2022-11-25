@@ -43,7 +43,7 @@ if selected == 'Reporte':
         fig = px.histogram(df, df.columns[i])
         st.plotly_chart(fig, use_container_width=True)
         
- if selected == 'Equipo':
+if selected == 'Equipo':
     option = st.selectbox('¿Si desea más información puede contactarnos mediante las siguientes opciones?',('Email', 'Teléfono', 'Whatsapp', 'Instagram'))
     st.write('Seleccionó:', option)
     
