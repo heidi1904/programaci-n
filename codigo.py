@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.figure_factory as ff
-#import scipy
+import scipy
 
 
 with st.sidebar: 
@@ -38,13 +38,14 @@ if selected == 'Inicio':
     st.dataframe(download_data())
     
 if selected == 'Reporte':
-    st.markdown("<h1 style ='text-align: center'>Titulo:</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Histogramas de datos sísmicos:</h1>", unsafe_allow_html=True)
+    for i in range(5,7):
+        fig = px.histogram(df, df.columns[i])
+        st.plotly_chart(fig, use_container_width=True)
+        
+ if selected == 'Equipo':
     option = st.selectbox('¿Si desea más información puede contactarnos mediante las siguientes opciones?',('Email', 'Teléfono', 'Whatsapp', 'Instagram'))
     st.write('Seleccionó:', option)
-    st.header("Histogramas de datos sísmicos:")
-    for i in range(5,7):
-        fig = px.histogram(df_cat, df_cat.columns[i])
-        st.plotly_chart(fig, use_container_width=True)
     
     
    
