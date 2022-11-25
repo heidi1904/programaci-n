@@ -42,4 +42,4 @@ if selected == 'Inicio':
         #fig = px.histogram(df_cat, df_cat.columns[i])
         #st.plotly_chart(fig, use_container_width=True)
     
-if selected == 'Reporte':
+#if selected == 'Reporte':
