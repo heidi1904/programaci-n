@@ -4,7 +4,8 @@ import pandas as pd
 import numpy as np
 import urllib.request
 from streamlit_option_menu import option_menu
-#import plotly.express as px
+import plotly.express as px
+import plotly.figure_factory as ff
 #import scipy
 
 
@@ -37,15 +38,15 @@ if selected == 'Inicio':
     
 if selected == 'Reporte':
     st.markdown("<h1 style ='text-align: center'>Titulo:</h1>", unsafe_allow_html=True)
+    option = st.selectbox('¿Si desea más información puede contactarnos mediante las siguientes opciones?',('Email', 'Teléfono', 'Whatsapp', 'Instagram'))
+    st.write('Seleccionó:', option)
+    st.header("Histogramas de datos sísmicos:")
+    for i in range(5,7):
+        fig = px.histogram(df_cat, df_cat.columns[i])
+        st.plotly_chart(fig, use_container_width=True)
     
-    #st.header("Histogramas de datos sísmicos:")
-    #for i in range(5,7):
-            #fig = px.histogram(df_cat, df_cat.columns[i])
-            #st.plotly_chart(fig, use_container_width=True)
     
-    
-   # option = st.selectbox('¿Si desea más información puede contactarnos mediante las siguientes opciones?',('Email', 'Teléfono', 'Whatsapp', 'Instagram'))
-   # st.write('Seleccionó:', option)
+   
 
     
 
