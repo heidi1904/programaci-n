@@ -23,10 +23,10 @@ with st.sidebar:
     )
 
 if selected == 'Inicio':
-  st.markdown("<h1 style ='text-align: center'>"Sismos ocurridos en el Perú para el período 1960-2021":</h1>", unsafe_allow_html=True)
-  st.markdown("---")
-  st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
-  st.header("Dataset")
+    st.markdown("<h1 style ='text-align: center'>"Sismos ocurridos en el Perú para el período 1960-2021":</h1>", unsafe_allow_html=True)
+    st.markdown("---")
+    st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
+    st.header("Dataset")
   
   @st.experimental_memo
   def download_data():
