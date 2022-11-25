@@ -38,13 +38,8 @@ if selected == 'Inicio':
     st.dataframe(download_data())
     
     st.markdown("<h1 style ='text-align: center'>Histogramas de datos sísmicos:</h1>", unsafe_allow_html=True)
-    for i in range(5,7):
-        fig = px.histogram(df_cat, df_cat.columns[i])
-        st.plotly_chart(fig, use_container_width=True)
+    #for i in range(5,7):
+        #fig = px.histogram(df_cat, df_cat.columns[i])
+        #st.plotly_chart(fig, use_container_width=True)
     
 if selected == 'Reporte':
-    
-#----------------------------------       
-#if selected == 'Equipo':
-    #option = st.selectbox('¿Si desea más información puede contactarnos mediante las siguientes opciones?',('Email', 'Teléfono', 'Whatsapp', 'Instagram'))
-    #st.write('Seleccionó:', option)
