@@ -32,16 +32,18 @@ if selected == 'Inicio':
         url ="https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
         filename ="Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
         urllib.request.urlretrieve(url,filename)
-        df = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
-        return df
+        df_cat = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
+        return df_cat
     download_data()
     st.dataframe(download_data())
     
-if selected == 'Reporte':
     st.markdown("<h1 style ='text-align: center'>Histogramas de datos sísmicos:</h1>", unsafe_allow_html=True)
     for i in range(5,7):
-        fig = px.histogram(df, df.columns[i])
+        fig = px.histogram(df_cat, df_cat.columns[i])
         st.plotly_chart(fig, use_container_width=True)
+    
+if selected == 'Reporte':
+    
         
 if selected == 'Equipo':
     option = st.selectbox('¿Si desea más información puede contactarnos mediante las siguientes opciones?',('Email', 'Teléfono', 'Whatsapp', 'Instagram'))
