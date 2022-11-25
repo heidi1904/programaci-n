@@ -28,7 +28,7 @@ if selected == 'Inicio':
         urllib.request.urlretrieve(url,filename)
         df = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
         return df
-    download_data()
-    st.dataframe(download_data())
+  download_data()
+  st.dataframe(download_data())
   
   
