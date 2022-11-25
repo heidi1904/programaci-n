@@ -44,7 +44,7 @@ if selected == 'Inicio':
     
 if selected == 'Reporte':
     
-        
+#----------------------------------       
 if selected == 'Equipo':
     option = st.selectbox('¿Si desea más información puede contactarnos mediante las siguientes opciones?',('Email', 'Teléfono', 'Whatsapp', 'Instagram'))
     st.write('Seleccionó:', option)
