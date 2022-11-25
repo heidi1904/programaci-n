@@ -31,7 +31,7 @@ if selected == 'Inicio':
   download_data()
   st.dataframe(download_data())
     
-  if selected == 'Reporte':
-  st.markdown("<h1 style ='text-align: center'>Reporte:</h1>", unsafe_allow_html=True)
+if selected == 'Reporte':
+    st.markdown("<h1 style ='text-align: center'>Reporte:</h1>", unsafe_allow_html=True)
   
   
