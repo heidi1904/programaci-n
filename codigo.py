@@ -44,4 +44,9 @@ if selected == 'Inicio':
         #fig = px.histogram(df_cat, df_cat.columns[i])
         #st.plotly_chart(fig, use_container_width=True)
     
-#if selected == 'Reporte':
+if selected == 'Reporte':
+     st.markdown("<h1 style ='text-align: center'>Titulo</h1>", unsafe_allow_html=True)
+    
+if selected == 'Equipo':
+    st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
+    
