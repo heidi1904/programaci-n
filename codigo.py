@@ -31,20 +31,20 @@ if selected == 'Inicio':
     
     @st.experimental_memo
     def download_data():
-        #url ="https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
-        #filename ="Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
-        #urllib.request.urlretrieve(url,filename)
-        df_cat = pd.read_excel(r'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.xlsx', header= 0) 
-        return df_cat
-    df_cat2=download_data()
-    st.dataframe(download_data())
-    st.write (df_cat2)
-    
+        url ="https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
+        filename ="Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
+        urllib.request.urlretrieve(url,filename)
+        
+        
+    download_data()
+    df_cat = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv',header = None) 
+    st.dataframe(df_cat)
+   
     st. header("Sismos ocurridos en el Perú para el período 1960-2021")
     st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
     st . header ( "Histogramas de datos sísmicos:" )
     for i in range(5,7):
-        fig = px.histogram(df_cat2, df_cat2.columns[i])
+        fig = px.histogram(df_cat, df_cat.columns[i])
         st.plotly_chart(fig, use_container_width=True)
     
     
