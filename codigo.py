@@ -67,5 +67,7 @@ if selected == 'Reporte':
         
     
 if selected == 'Equipo':
-    st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)    
+    st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
+    image = Image.open('MP.jpg')
+    st.image(image)
     
