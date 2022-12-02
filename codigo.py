@@ -47,6 +47,7 @@ if selected == 'Inicio':
     st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
     st . header ( "Histogramas de datos sísmicos:" )
     for i in range(5,7):
+        group_labels = ['y', 'x']
         fig = px.histogram(df_cat, df_cat.columns[i])
         st.plotly_chart(fig, use_container_width=True)
     
@@ -71,4 +72,15 @@ if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
     image = Image.open('MP.jpg')
     st.image(image)
+    st.write("escribir normal")
+    st.subheader("escribir subtitulo")
+    st.write("**escribir en negrita**")
+    st.caption('info en gris')
+    st.markdown("--- linea")
+    st.markdown("### espaacio") 
+
+    
+    
+
+    
     
