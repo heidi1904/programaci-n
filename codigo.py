@@ -41,12 +41,10 @@ if selected == 'Inicio':
     
     st.markdown("<h1 style ='text-align: center'>Histogramas de datos sísmicos:</h1>", unsafe_allow_html=True)
     st . header ( "Histogramas de datos sísmicos:" )
-    para  i  en  rango ( 5 , 7 ):
-        higo  =  px . histograma ( df_cat , df_cat . columnas [ i ])
-        st . plotly_chart ( fig , use_container_width = True )
-    #for i in range(5,7):
-        #fig = px.histogram(df_cat, df_cat.columns[i])
-        #st.plotly_chart(fig, use_container_width=True)
+    for i in range(5,7):
+        fig = px.histogram(df_cat, df_cat.columns[i])
+        st.plotly_chart(fig, use_container_width=True)
+    
     
 if selected == 'Reporte':
      st.markdown("<h1 style ='text-align: center'>Titulo</h1>", unsafe_allow_html=True)
