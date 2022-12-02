@@ -31,10 +31,10 @@ if selected == 'Inicio':
     
     @st.experimental_memo
     def download_data():
-        url ="https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
-        filename ="Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
-        urllib.request.urlretrieve(url,filename)
-        df_cat = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
+        #url ="https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
+        #filename ="Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
+        #urllib.request.urlretrieve(url,filename)
+        df_cat = pd.read_excel(r'https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.xlsx', header= 0) 
         return df_cat
     download_data()
     st.dataframe(download_data())
