@@ -58,9 +58,9 @@ if selected == 'Reporte':
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
             })
-            return df_local
-        data = localizacion_data()
-        st.map(data)        
+        return df_local
+    data = localizacion_data()
+    st.map(data)        
         
         
         
