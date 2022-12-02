@@ -37,7 +37,7 @@ if selected == 'Inicio':
         
         
     download_data()
-    df_cat = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv',header = None) 
+    df_cat = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv') 
     st.dataframe(df_cat)
    
     st. header("Sismos ocurridos en el Perú para el período 1960-2021")
