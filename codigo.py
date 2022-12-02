@@ -7,6 +7,7 @@ from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.figure_factory as ff
+from PIL import Image
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
