@@ -7,7 +7,6 @@ from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.figure_factory as ff
-import scipy
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
@@ -21,8 +20,11 @@ with st.sidebar:
         icons = ['house', 'book', 'people'],
         menu_icon='cast',
         default_index = 0,
+        styles ={
+            "nav-link-selected":{"background-color":"green"}
+        },
     )
-
+#---
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Sismos ocurridos en el Perú para el período: 1960-2021</h1>", unsafe_allow_html=True)
     st.markdown("---")
@@ -47,10 +49,25 @@ if selected == 'Inicio':
         fig = px.histogram(df_cat, df_cat.columns[i])
         st.plotly_chart(fig, use_container_width=True)
     
-    
 if selected == 'Reporte':
-     st.markdown("<h1 style ='text-align: center'>Titulo</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Lugares afectados</h1>", unsafe_allow_html=True)
+    @st.cache
+    def localizacion_data():
+        df_local = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
+        df_local = df_local.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_local
+        data = localizacion_data()
+        st.map(data)        
+        
+        
+        
+        
     
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
+    image=
+    
     
