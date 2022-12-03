@@ -75,8 +75,8 @@ if selected == 'Mapas':
             })
         return df_local
     data = localizacion_data()
-    st.write(data)
-    #st.map(data)        
+    data_map=data[["lat","long"]]
+    st.map(data)        
 
 #---    
 if selected == 'Equipo':
