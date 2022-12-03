@@ -17,7 +17,7 @@ with st.sidebar:
     st.sidebar.header('Programación Avanzada')
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Reporte','Equipo'],
+        options = ['Inicio', 'Mapas','Equipo'],
         icons = ['house', 'book', 'people'],
         menu_icon='cast',
         default_index = 0,
