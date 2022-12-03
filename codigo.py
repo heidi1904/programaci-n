@@ -51,7 +51,8 @@ if selected == 'Inicio':
         fig = px.histogram(df_cat, df_cat.columns[i])
         st.plotly_chart(fig, use_container_width=True)
     
-if selected == 'Reporte':
+if selected == 'Mapas':
+    st.subheader("Un mapa sísmico representa la distribución espacial de los eventos sísmicos que dieron lugar en el Perú. La información obtenida fue a partir de la Plataforma Nacional de Datos Abiertos extraídos del Instituto Geofísico del Perú (IGP). Los sismos fueron clasificados según su profundidad: Superficiales, Intermedios y Profundos.")
     st.markdown("<h1 style ='text-align: center'>Lugares afectados</h1>", unsafe_allow_html=True)
     @st.cache
     def localizacion_data():
@@ -71,8 +72,8 @@ if selected == 'Reporte':
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
     image = Image.open('MP.jpg')
-    st.markdown("____________________________________________________________________")
     st.image(image)
+    st.markdown("____________________________________________________________________")
     st.write("escribir normal")
     st.subheader("escribir subtitulo")
     st.write("**escribir en negrita**")
