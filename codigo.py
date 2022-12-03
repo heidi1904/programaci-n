@@ -75,7 +75,7 @@ if selected == 'Mapas':
             })
         return df_local
     data = localizacion_data()
-    data_map=data[["lat","long"]]
+    data_map=data[["lat","lon"]]
     st.map(data)        
 
 #---    
