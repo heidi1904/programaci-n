@@ -25,7 +25,7 @@ with st.sidebar:
             "nav-link-selected":{"background-color":"purple"}
         },
     )
-#---
+#--------
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Sismos ocurridos en el Perú para el período: 1960-2021</h1>", unsafe_allow_html=True)
     st.markdown("---")
@@ -50,11 +50,17 @@ if selected == 'Inicio':
         group_labels = ['y', 'x']
         fig = px.histogram(df_cat, df_cat.columns[i])
         st.plotly_chart(fig, use_container_width=True)
-    
+
+#-----
 if selected == 'Mapas':
-    st.markdown("<h1 style ='text-align: center'>Zonas afectadas</h1>", unsafe_allow_html=True)
+    st.markdown("____________________________________________________________________"
+    st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
     st.write("Un mapa sísmico representa la distribución espacial de los eventos sísmicos que dieron lugar en el Perú. La información obtenida fue a partir de la Plataforma Nacional de Datos Abiertos extraídos del Instituto Geofísico del Perú (IGP). Los sismos fueron clasificados según su profundidad: Superficiales, Intermedios y Profundos.")
+    st.markdown("____________________________________________________________________")
     image = Image.open('Mapa_sismico.jpg')
+    st.image(image)
+    st.write("...")
+    image = Image.open('')
     st.image(image)
     @st.cache
     def localizacion_data():
@@ -66,7 +72,8 @@ if selected == 'Mapas':
         return df_local
     data = localizacion_data()
     st.map(data)        
-      
+
+#---    
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
     st.markdown("____________________________________________________________________")
