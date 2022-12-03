@@ -68,7 +68,7 @@ if selected == 'Mapas':
     #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
     @st.cache
     def localizacion_data():
-        df_local = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
+        df_local = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv',dtype={"LATITUD":np.float64,"LONGITUD":np.float64})
         df_local = df_local.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
