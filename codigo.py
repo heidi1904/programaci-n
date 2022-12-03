@@ -7,6 +7,7 @@ from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.figure_factory as ff
+import gdown
 from PIL import Image
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
@@ -31,14 +32,14 @@ if selected == 'Inicio':
     st.write("A nivel mundial, el Perú es uno de los países de mayor potencial sísmico debido a que forma parte del denominado Cinturón de Fuego del Pacífico, debido a los procesos de convección del manto del planeta. En este sentido, la actividad sísmica en torno a ella genera diferentes procesos de convergencia entre las placas tectónicas. En Sudamérica, las placas Nazca y Sudamericana convergen, desarrollando una geodinámica activa y, por ende, una actividad sísmica frecuente. Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
     st.header("Dataset")
     
-    #@st.experimental_memo
-    #def download_data():
-        #url ="https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
-        #filename ="Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
-        #urllib.request.urlretrieve(url,filename) 
+    @st.experimental_memo
+    def download_data():
+        url ="https://drive.google.com/uc?id=1XKCOchqhncJV6rm_osfHqqb7sVXX0FI4"
+        ouput ="Catalogo.xlsx"
+        gdown.download(url,ouput,quiet = False)
         
-    #download_data()
-    df_cat = pd.read_excel('https://github.com/heidi1904/programaci-n/blob/main/Catalogo1960_2021_1.xlsx') 
+    download_data()
+    df_cat = pd.read_excel('Catalogo.xlsx') 
     st.dataframe(df_cat)
     st . header ( "Sismos ocurridos en el Perú para el período 1960-2021" )
     st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
@@ -49,7 +50,7 @@ if selected == 'Inicio':
         st.plotly_chart(fig, use_container_width=True)
 
 #-----
-df_local=pd.read_excel("https://github.com/heidi1904/programaci-n/blob/main/Catalogo1960_2021_1.xlsx")
+df_local=pd.read_excel("Catalogo.xlsx")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
     st.markdown("____________________________________________________________________")
@@ -67,7 +68,7 @@ if selected == 'Mapas':
     #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
     @st.cache
     def localizacion_data():
-        df_local = pd.read_excel('https://github.com/heidi1904/programaci-n/blob/main/Catalogo1960_2021_1.xlsx')
+        df_local = pd.read_excel('Catalogo.xlsx')
         df_local = df_local.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
