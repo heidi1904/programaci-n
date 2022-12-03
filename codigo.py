@@ -71,7 +71,7 @@ if selected == 'Mapas':
     
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
-    image = Image.open('MP.jpg')
+    image = Image.open('Mapa_sismico.jpg')
     st.image(image)
     st.markdown("____________________________________________________________________")
     st.write("escribir normal")
