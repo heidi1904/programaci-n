@@ -41,9 +41,9 @@ if selected == 'Inicio':
     download_data()
     df_cat = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv') 
     st.dataframe(df_cat)
-    st.subheader("Sismos ocurridos en el Perú para el período 1960-2021")
+    st . header ( "Sismos ocurridos en el Perú para el período 1960-2021" )
     st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
-    st . header ( "Histogramas de datos sísmicos:" )
+    st.subheader("Histogramas de datos sísmicos:")
     for i in range(5,7):
         group_labels = ['y', 'x']
         fig = px.histogram(df_cat, df_cat.columns[i])
