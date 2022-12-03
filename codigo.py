@@ -64,6 +64,7 @@ if selected == 'Mapas':
     image = Image.open('Image_Dr.jpg')
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
+    df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
     @st.cache
     def localizacion_data():
         df_local = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
