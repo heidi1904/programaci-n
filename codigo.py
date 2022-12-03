@@ -37,7 +37,7 @@ if selected == 'Inicio':
         #filename ="Catalogo.xlsx%20-%20Catalogo1960_2021.csv"
         #urllib.request.urlretrieve(url,filename) 
         
-    download_data()
+    #download_data()
     df_cat = pd.read_excel('Catalogo1960_2021_1.xlsx') 
     st.dataframe(df_cat)
     st . header ( "Sismos ocurridos en el Perú para el período 1960-2021" )
