@@ -38,7 +38,7 @@ if selected == 'Inicio':
         #urllib.request.urlretrieve(url,filename) 
         
     #download_data()
-    df_cat = pd.read_excel('Catalogo1960_2021_1.xlsx') 
+    df_cat = pd.read_excel('https://github.com/heidi1904/programaci-n/blob/main/Catalogo1960_2021_1.xlsx') 
     st.dataframe(df_cat)
     st . header ( "Sismos ocurridos en el Perú para el período 1960-2021" )
     st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
@@ -49,7 +49,7 @@ if selected == 'Inicio':
         st.plotly_chart(fig, use_container_width=True)
 
 #-----
-df_local=pd.read_excel("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo1960_2021_1.xlsx")
+df_local=pd.read_excel("https://github.com/heidi1904/programaci-n/blob/main/Catalogo1960_2021_1.xlsx")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
     st.markdown("____________________________________________________________________")
@@ -67,7 +67,7 @@ if selected == 'Mapas':
     #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
     @st.cache
     def localizacion_data():
-        df_local = pd.read_excel('Catalogo1960_2021_1.xlsx')
+        df_local = pd.read_excel('https://github.com/heidi1904/programaci-n/blob/main/Catalogo1960_2021_1.xlsx')
         df_local = df_local.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
