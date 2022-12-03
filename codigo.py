@@ -60,7 +60,7 @@ if selected == 'Mapas':
     image = Image.open('Mapa_sismico.jpg')
     st.image(image)
     st.write("...")
-    image = Image.open('')
+    image = Image.open('Image_Dr.jpg')
     st.image(image)
     @st.cache
     def localizacion_data():
