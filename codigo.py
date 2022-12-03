@@ -50,6 +50,7 @@ if selected == 'Inicio':
         st.plotly_chart(fig, use_container_width=True)
 
 #-----
+df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
     st.markdown("____________________________________________________________________")
@@ -64,7 +65,7 @@ if selected == 'Mapas':
     image = Image.open('Image_Dr.jpg')
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
-    df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
+    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
     @st.cache
     def localizacion_data():
         df_local = pd.read_csv('Catalogo.xlsx%20-%20Catalogo1960_2021.csv')
