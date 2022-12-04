@@ -28,7 +28,7 @@ with st.sidebar:
             "nav-link-selected":{"background-color":"purple"}
         },
     )
-#-------------------------------------------------------------------
+#---------------------------INICIO---------------------------------
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Sismos ocurridos en el Perú para el período: 1960-2021</h1>", unsafe_allow_html=True)
     st.markdown('____')
@@ -42,6 +42,8 @@ if selected == 'Inicio':
     st.markdown('###')
     st.subheader('INSTITUTO GEOFÍSICO DEL PERÚ (IGP)') 
     st.write('El IGP es la entidad encargada de investigar y monitorear los procesos geofísicos en territorio peruano. Si bien el IGP ha logrado determinar las ubicaciones y posibles magnitudes de futuros sismos, aún no es posible la determinación del día y la hora.')
+    image = Image.open('IGP.png')
+    st.image(image)
     st.subheader('Dataset: Catalogo Sísmico 1960-2021')
     st.write("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
     st.caption('Fecha de última actualización: 31/12/2021, 20:00 (UTC-05:00)')
@@ -68,7 +70,7 @@ if selected == 'Inicio':
     bar_chart.columns = ['Magnitud del sismo']
     st.bar_chart(bar_chart)
     
-#-------------------------------------------------------------------
+#---------------------------MAPAS-------------------------------
 df_local=pd.read_excel("Catalogo.xlsx")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
@@ -135,7 +137,7 @@ if selected == 'Mapas':
     
     
 
-#-------------------------------------------------------------------    
+#-----------------------------EQUIPO----------------------------    
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
     st.markdown('____')
