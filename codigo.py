@@ -31,9 +31,7 @@ with st.sidebar:
 #---------------------------INICIO---------------------------------
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Sismos ocurridos en el Perú para el período: 1960-2021</h1>", unsafe_allow_html=True)
-    st.markdown('____')
-    SISMOS OCURRIDOS EN EL PERÚ PARA EL PERÍODO 1960-2021
- 
+    st.markdown('____') 
     st.write("A nivel mundial, el Perú es uno de los países de mayor potencial sísmico debido a que forma parte del denominado Cinturón de Fuego del Pacífico, como consecuencia de los procesos de convección del manto del planeta. En este sentido, la actividad sísmica en torno a ella genera diferentes procesos de convergencia entre las placas tectónicas. En Sudamérica, las placas Nazca y Sudamericana convergen, desarrollando una geodinámica activa y, por ende, una actividad sísmica frecuente.")
     st.markdown('###')
     st.write('**Figura 1.** Cinturón de Fuego del Pacífico')
