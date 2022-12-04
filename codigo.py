@@ -63,18 +63,19 @@ if selected == 'Inicio':
     st.caption('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
     
-    st.subheader("Histogramas de sismos: 1960-2021.")
+    st.subheader("Histogramas de sismos entre 1960-2021")
+    st.write('**Según profundidad**')
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
-    st.caption('**Figura1:** Histograma de frecuencia de sismos en función de la profundidad de los focos sísmicos.')    
-    st.subheader("Sismos registrados según magnitud entre 1960-2021.")
+    st.caption('**Figura 1:** Histograma de frecuencia de sismos en función de la profundidad de los focos sísmicos.')    
+    st.write('**Según magnitud**')
     st.markdown("###")
     bar_chart = df_catalogo.MAGNITUD.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Magnitud del sismo']
     st.bar_chart(bar_chart)
-    st.caption('**Figura2:** Histograma de frecuencia de sismos en función de los rangos de magnitud.')
+    st.caption('**Figura 2:** Histograma de frecuencia de sismos en función de los rangos de magnitud.')
     
 #---------------------------MAPAS-------------------------------
 df_local=pd.read_excel("Catalogo.xlsx")
