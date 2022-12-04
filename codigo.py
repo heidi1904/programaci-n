@@ -74,6 +74,7 @@ if selected == 'Inicio':
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Magnitud del sismo']
     st.bar_chart(bar_chart)
+    st.caption('**Figura2:** Histograma de frecuencia de sismos en función de los rangos de magnitud.')
     
 #---------------------------MAPAS-------------------------------
 df_local=pd.read_excel("Catalogo.xlsx")
