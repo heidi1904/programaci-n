@@ -95,13 +95,21 @@ if selected == 'Mapas':
     data = localizacion_data()
     st.markdown("###")
     dataset = st.selectbox(
-        'Seleccione una opción para profundidad:',
+        'Seleccione una opción:',
         ('Profundidad superficial (foco de hasta 70 km)',
          'Profundidad intermedia (entre 70 y 300 km)',
          'Profundidad profunda (con más de 300 km)')
         ) 
-    
-    #vincular         
+    option = '-'
+    if dataset == 'Profundidad superficial (foco de hasta 70 km)':
+        option = 'profundidad superficial'
+        st.markdown("###")
+        st.write('**Sismos registrados de'+option+' durante 1960-2021.**')
+        
+        
+        
+        
+        
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
