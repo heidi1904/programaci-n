@@ -41,9 +41,9 @@ if selected == 'Inicio':
     st.caption('El cinturón de fuego del Pacífico o anillo de fuego, es una región de 40.000 kilómetros de largo, distribuidos en tres continentes. Se caracteriza por concentrar algunas de las zonas de subducción más importantes del mundo, lo que ocasiona una intensa actividad sísmica y volcánica.')
     st.markdown('###')
     
-    st.header('Catálogo Sísmico: 1960-2021')
-    st.write ("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
-    st.subheader('Dataset:')
+    st.subheader('Dataset: Catalogo Sísmico 1960-2021')
+    st.caption ("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
+    st.caption('Fecha de última actualización: 31/12/2021, 20:00 (UTC-05:00)')
     @st.experimental_memo
     def download_data():
         url = "https://drive.google.com/uc?id=1XKCOchqhncJV6rm_osfHqqb7sVXX0FI4"
@@ -65,6 +65,9 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
 
+    
+    
+    
     st.subheader("Histogramas de datos sísmicos:")
     for i in range(5,7):
         group_labels = ['y', 'x']
