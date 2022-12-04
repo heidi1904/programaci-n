@@ -32,7 +32,8 @@ with st.sidebar:
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Sismos ocurridos en el Perú para el período: 1960-2021</h1>", unsafe_allow_html=True)
     st.markdown('____')
-    st.subheader('Contexto:') 
+    SISMOS OCURRIDOS EN EL PERÚ PARA EL PERÍODO 1960-2021
+ 
     st.write("A nivel mundial, el Perú es uno de los países de mayor potencial sísmico debido a que forma parte del denominado Cinturón de Fuego del Pacífico, como consecuencia de los procesos de convección del manto del planeta. En este sentido, la actividad sísmica en torno a ella genera diferentes procesos de convergencia entre las placas tectónicas. En Sudamérica, las placas Nazca y Sudamericana convergen, desarrollando una geodinámica activa y, por ende, una actividad sísmica frecuente.")
     st.markdown('###')
     st.write('**Figura 1.** Cinturón de Fuego del Pacífico')
@@ -44,6 +45,10 @@ if selected == 'Inicio':
     st.write('El IGP es la entidad encargada de investigar y monitorear los procesos geofísicos en territorio peruano. Si bien el IGP ha logrado determinar las ubicaciones y posibles magnitudes de futuros sismos, aún no es posible la determinación del día y la hora.')
     image = Image.open('IGP.png')
     st.image(image)
+    st.subheader('SISMOS OCURRIDOS EN EL PERÚ PARA EL PERÍODO 1960-2021') 
+    st.write('Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021 con datos proporcionados por el Instituto Geofísico del Perú (IGP).')
+    st.write('Dependiendo de la profundidad del hipocentro de energía liberada en un terremoto, es que podemos clasificarlos en tres tipos: superficiales, intermedios y profundos.\n El hipocentro o foco es el punto donde se libera la energía en un terremoto. Por su parte, el epicentro es el lugar de la superficie terrestre que se ubica exactamente sobre el hipocentro del terremoto. El tipo de magnitud se registra de acuerdo a la profundidad característica que tuvo lugar el sismo. Para esto, podemos clasificar en tres tipos los terremotos:')
+    st.write('**Profundidad superficial:** Su foco se encuentra entre los 70 km de profundidad, comúnmente son los más destructivos porque impacta directamente con la superficie y en lo general su hipocentro se encuentra entre los 10 y 25 km de profundidad.\n **Profundidad intermedia:** Con profundidades entre los 70 y 300 km.\n **Profundidad profunda:** El foco se halla a más de 300 km de profundidad, sobrepasan la litósfera, casi no se sienten por lo lejos que se encuentran de la superficie y también son poco frecuentes.')
     st.subheader('Dataset: Catalogo Sísmico 1960-2021')
     st.write("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
     st.caption('Fecha de última actualización: 31/12/2021, 20:00 (UTC-05:00)')
@@ -86,7 +91,6 @@ if selected == 'Mapas':
     image = Image.open('Image_Dr.jpg')
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
-    st.markdown('____')
     #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
     @st.cache
     def localizacion_data():
