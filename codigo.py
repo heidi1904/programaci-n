@@ -68,11 +68,6 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #-------------------------------------------------------------------
-df_superficial = pd.excel('superficial.xlsx')
-df_intermedia = pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/intermedia.csv')
-df_profunda = pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/profunda.csv')
-
-
 df_local=pd.read_excel("Catalogo.xlsx")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
@@ -104,24 +99,24 @@ if selected == 'Mapas':
     data_map=data1[["lat","lon"]]
     
     
-    #---------------- pendiente
+ 
     dataset = st.selectbox(
         'Seleccione una opción:',
-        ('Profundidad superficial (menos de 70 km)',
+        ('Profundidad superficial (< 70 km)',
          'Profundidad intermedia (entre 70 y 300 km)',
          'Profundidad profunda (con más de 300 km)')
         ) 
     option = '-'
-    if dataset == 'Profundidad superficial (menos de 70 km)':
+    if dataset == 'Profundidad superficial (< 70 km)':
         option = 'profundidad superficial'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
         @st.experimental_memo
-        def superficial_data():
+        def download_data():
             url = "https://drive.google.com/uc?id=16EOdn4dwYEeA4buvVwun2fzc-0c04WcO"
             ouput = "superficial.xlsx"
             gdown.download(url,ouput,quiet = False)
-        superficial_data()
+        download_data()
         df_superficial = pd.read_excel('superficial.xlsx')
         df_superficial= df_superficial.rename(columns={
             'LATITUD':'lat',
@@ -132,8 +127,8 @@ if selected == 'Mapas':
     st.map(data)
     st.dataframe(df_superficial)
     cant = len(df_superficial.axes[0]) 
-
-    elif dataset == 'Profundidad intermedia (entre 70 y 300 km)':   
+    
+    elif dataset == 'Profundidad intermedia (entre 70 y 300 km)':
         option = 'profundidad intermedia'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
