@@ -99,12 +99,13 @@ if selected == 'Mapas':
             })
         return df_local
     data = localizacion_data()
-    st.map(data_map)
 
     
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
+    st.map(data_map)
+
     
 
     dataset = st.selectbox(
