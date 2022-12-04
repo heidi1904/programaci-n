@@ -93,7 +93,7 @@ if selected == 'Mapas':
             })
         return df_local
     data = localizacion_data()
-    
+    st.markdown("###")
     dataset = st.selectbox(
         'A continuación, eleccione una opción para profundidad:',
         ('Profundidad superficial',
