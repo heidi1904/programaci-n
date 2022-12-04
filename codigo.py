@@ -67,7 +67,7 @@ if selected == 'Inicio':
     st.subheader("Histogramas de datos sísmicos:")
     for i in range(5,7):
         group_labels = ['y', 'x']
-        fig = px.histogram(df_cat, df_cat.columns[i])
+        fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
 
 #-----
