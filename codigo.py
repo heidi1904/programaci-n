@@ -60,6 +60,9 @@ if selected == 'Inicio':
         group_labels = ['y', 'x']
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
+        
+        
+        
 
 #-----
 df_local=pd.read_excel("Catalogo.xlsx")
@@ -92,22 +95,11 @@ if selected == 'Mapas':
     data_map=data1[["lat","lon"]]
     st.map(data_map)        
 
-#---    
+#-------------------------------------------------------------------    
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
     st.markdown("____________________________________________________________________")
     st.subheader("¿Quiénes somos?")
+    st.write("Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia (UPCH), buscamos que el usuario que ingrese a nuestra página pueda revisar de forma sencilla la magnitud que registraron los sismos entre los años 1960 y 2021 mediante un dashboard.")
     image = Image.open('Foto grupal.jpg')
     st.image(image)
-    st.write("Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia (UPCH), buscamos que el usuario que ingrese a nuestra página pueda revisar de forma sencilla la magnitud que registraron los sismos entre los años 1960 y 2021 mediante un dashboard.")
-    st.subheader("escribir subtitulo")
-    st.write("**escribir en negrita**")
-    st.caption('info en gris')
-    st.markdown("--- linea")
-    st.markdown("### espaacio") 
-
-    
-    
-
-    
-    
