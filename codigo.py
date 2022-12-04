@@ -101,7 +101,7 @@ if selected == 'Mapas':
     data_map=data1[["lat","lon"]]
     
     
-    #----------------
+    #---------------- pendiente
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Profundidad superficial (foco de hasta 70 km)',
