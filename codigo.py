@@ -99,7 +99,7 @@ if selected == 'Mapas':
     data_map=data1[["lat","lon"]]
     
     
- 
+ #pendienteeee
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Profundidad superficial',
@@ -124,7 +124,7 @@ if selected == 'Mapas':
        
     
      
-    st.write('Se encontraron', cant,'registros de sismos para su búsqueda.')    
+    #st.write('Se encontraron', cant,'registros de sismos para su búsqueda.')    
     
         
         
