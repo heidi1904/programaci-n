@@ -53,9 +53,8 @@ if selected == 'Inicio':
     df_catalogo = pd.read_excel('Catalogo.xlsx') 
     st.dataframe(df_catalogo)
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
-    
     st.subheader('Descripción del Dataset:')
-    st.write('A continuación, se proporciona una descripción de las variables incluidas en el Dataset.')
+    st.caption('A continuación, se proporciona una descripción de las variables incluidas en el Dataset.')
     @st.experimental_memo
     def download_data():
         url = "https://raw.githubusercontent.com/heidi1904/programaci-n/main/variables.csv"
