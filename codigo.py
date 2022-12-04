@@ -104,7 +104,7 @@ if selected == 'Mapas':
     if dataset == 'Profundidad superficial (foco de hasta 70 km)':
         option = 'profundidad superficial (foco de hasta 70 km)'
         st.markdown("###")
-        st.subheader('**Sismos registrados con'+option+' durante 1960-2021.**')
+        st.write('**Sismos registrados con '+option+' durante 1960-2021.**')
         
         
         
