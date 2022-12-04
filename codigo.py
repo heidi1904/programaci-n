@@ -89,25 +89,6 @@ if selected == 'Mapas':
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
     st.markdown('____')
-    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
-    @st.cache
-    def localizacion_data():
-        df_local = pd.read_excel('Catalogo.xlsx')
-        df_local = df_local.rename(columns={
-                'LATITUD':'lat',
-                'LONGITUD':'lon',
-            })
-        return df_local
-    data = localizacion_data()
-
-    
-    data1=data[data["PROFUNDIDAD"]<=60]
-    #data2=data[data["PROFUNDIDAD"]<=300]
-    data_map=data1[["lat","lon"]]
-    st.map(data_map)
-
-    
-
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Profundidad superficial',
@@ -145,14 +126,27 @@ if selected == 'Mapas':
         option = 'profundidad profunda'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
+        
+        
        
-    
-     
-    
+    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
+    @st.cache
+    def localizacion_data():
+        df_local = pd.read_excel('Catalogo.xlsx')
+        df_local = df_local.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+        return df_local
+    data = localizacion_data()
 
-       
     
+    data1=data[data["PROFUNDIDAD"]<=60]
+    #data2=data[data["PROFUNDIDAD"]<=300]
+    data_map=data1[["lat","lon"]]
+    st.map(data_map)
 
+    
 #-----------------------------EQUIPO----------------------------    
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
