@@ -63,14 +63,10 @@ if selected == 'Inicio':
     st.subheader("Gráfico 2. Sismos registrados (en %) según magnitud")
     st.markdown("###")
 
-    pie_chart = df_catalogo.MAGNITUD.value_counts()
-    pie_chart = pd.DataFrame(pie_chart)
-    pie_chart = pie_chart.reset_index()
-    pie_chart.columns = ['MAGNITUD','TOTAL']
-    fig1, ax1 = plt.subplots()
-    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['MAGNITUD'], autopct='%1.1f%%')
-    ax1.axis('equal')
-    st.pyplot(fig1)
+    bar_chart = df_catalogo.MAGNITUD.value_counts()
+    bar_chart = pd.DataFrame(bar_chart)
+    bar_chart.columns = ['MAGNITUD']
+    st.bar_chart(bar_chart)
     
 #-------------------------------------------------------------------
 
