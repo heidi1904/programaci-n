@@ -60,12 +60,12 @@ if selected == 'Inicio':
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
         
-    st.subheader("Gráfico 2. Sismos registrados (en %) según magnitud")
+    st.subheader("Sismos registrados según magnitud entre 1960-2021.")
     st.markdown("###")
 
     bar_chart = df_catalogo.MAGNITUD.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
-    bar_chart.columns = ['MAGNITUD']
+    bar_chart.columns = ['Magnitud del sismo']
     st.bar_chart(bar_chart)
     
 #-------------------------------------------------------------------
