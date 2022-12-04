@@ -98,7 +98,7 @@ if selected == 'Mapas':
     "- Superficiales (con un foco de 70 KM de profundidad).
     "- Intermedios (con una profundidad de entre los 70 y 300 km)
     "- Profundos (con más de 300 km de profundidad).
-    '''
+    ''')
     dataset = st.selectbox(
         'A continuación, eleccione una opción para profundidad:',
         ('Profundidad superficial',
