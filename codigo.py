@@ -89,6 +89,9 @@ if selected == 'Mapas':
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
     st.markdown('____')
+    
+    #en el mismo excel del catalogo se puede filtrar para profundidad
+    #pendiente vincular los archivos a cada opcion para que los lea 
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Profundidad superficial',
