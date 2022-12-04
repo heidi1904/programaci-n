@@ -72,7 +72,7 @@ if selected == 'Inicio':
     
 #---------------------------MAPAS-------------------------------
 df_local=pd.read_excel("Catalogo.xlsx")
-#df_intermedia = pd.read_excel("intermedia.xlsx")
+df_intermedia = pd.read_excel("https://raw.githubusercontent.com/heidi1904/programaci-n/main/intermedia.xlsx%20-%20catalogo.csv")
 
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
