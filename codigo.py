@@ -64,12 +64,12 @@ if selected == 'Inicio':
     st.markdown('###')
     
     st.subheader("Histogramas de sismos entre 1960-2021")
-    st.write('**Según profundidad**')
+    st.write('**Según profundidad:**')
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
     st.caption('**Figura 1:** Histograma de frecuencia de sismos en función de la profundidad de los focos sísmicos.')    
-    st.write('**Según magnitud**')
+    st.write('**Según magnitud:**')
     st.markdown("###")
     bar_chart = df_catalogo.MAGNITUD.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
