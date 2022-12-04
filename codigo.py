@@ -55,7 +55,7 @@ if selected == 'Inicio':
     st.caption('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
     
-    st.subheader("Histogramas de datos sísmicos:")
+    st.subheader("Histograma de sismos registrados según profundidad entre 1960-2021.")
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
