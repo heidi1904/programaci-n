@@ -45,7 +45,7 @@ if selected == 'Inicio':
     image = Image.open('IGP.png')
     st.image(image)
     st.subheader('Dataset: Catalogo Sísmico 1960-2021')
-    st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021 con datos proporcionados por el Instituto Geofísico del Perú (IGP).")
+    st.write("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
     st.caption('Fecha de última actualización: 31/12/2021, 20:00 (UTC-05:00)')
     @st.experimental_memo
     def download_data():
@@ -58,19 +58,17 @@ if selected == 'Inicio':
     st.caption('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
     
-    st.subheader("Histogramas de sismos entre 1960-2021")
-    st.write('**Según profundidad:**')
+    st.subheader("Histograma de sismos según profundidad entre 1960-2021.")
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
-    st.caption('**Figura 1:** Histograma de frecuencia de sismos en función de la profundidad de los focos sísmicos.')    
-    st.write('**Según magnitud:**')
+        
+    st.subheader("Sismos registrados según magnitud entre 1960-2021.")
     st.markdown("###")
     bar_chart = df_catalogo.MAGNITUD.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Magnitud del sismo']
     st.bar_chart(bar_chart)
-    st.caption('**Figura 2:** Histograma de frecuencia de sismos en función del rango de magnitud.')  
     
 #---------------------------MAPAS-------------------------------
 df_local=pd.read_excel("Catalogo.xlsx")
@@ -91,22 +89,6 @@ if selected == 'Mapas':
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
     st.markdown('____')
-    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
-    @st.cache
-    def localizacion_data():
-        df_local = pd.read_excel('Catalogo.xlsx')
-        df_local = df_local.rename(columns={
-                'LATITUD':'lat',
-                'LONGITUD':'lon',
-            })
-        return df_local
-    data = localizacion_data()
-    
-    data1=data[data["PROFUNDIDAD"]<=60]
-    #data2=data[data["PROFUNDIDAD"]<=300]
-    data_map=data1[["lat","lon"]]
-    
-
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Profundidad superficial',
@@ -118,7 +100,7 @@ if selected == 'Mapas':
         option = 'profundidad superficial'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
-     
+        
     
     elif dataset == 'Profundidad intermedia':
         option = 'profundidad intermedia'
@@ -126,7 +108,7 @@ if selected == 'Mapas':
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
         @st.cache
         def intermedia_data():
-            df_intermedia = pd.read_excel('intermedia.xlsx')
+            df_intermedia = pd.read_csv('intermedia.xlsx%20-%20catalogo.csv')
             df_intermedia = df_intermedia.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
@@ -136,23 +118,35 @@ if selected == 'Mapas':
         st.map(data)
         st.markdown("###")
         st.dataframe(df_intermedia)
-        cant = len(df_intermedia.axes[0]) 
-            
+        #n = len(df_intermedia.axes[0])
+        #st.write('Se encontraron', n,'registros de sismos para su búsqueda.') 
 
+       
     elif dataset == 'Profundidad profunda':
         option = 'profundidad profunda'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
+        
+        
        
-    
-     
-    st.write('Se encontraron', cant,'registros de sismos para su búsqueda.') 
-    st.map(data_map)
-    
+    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
+    @st.cache
+    def localizacion_data(): 
+        df_local = pd.read_excel('Catalogo.xlsx')
+        df_local = df_local.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+        return df_local
+    data = localizacion_data()
 
-       
     
+    data1=data[data["PROFUNDIDAD"]<=60]
+    #data2=data[data["PROFUNDIDAD"]<=300]
+    data_map=data1[["lat","lon"]]
+    #st.map(data_map)
 
+    
 #-----------------------------EQUIPO----------------------------    
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
@@ -160,3 +154,4 @@ if selected == 'Equipo':
     st.write("Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia (UPCH), buscamos que el usuario que ingrese a nuestra página pueda revisar de forma sencilla la magnitud que registraron los sismos entre los años 1960 y 2021 mediante un dashboard.")
     image = Image.open('Foto grupal.jpg')
     st.image(image)
+  
