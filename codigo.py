@@ -85,6 +85,8 @@ if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
     st.markdown("____________________________________________________________________")
     st.subheader("¿Quiénes somos?")
+    image = Image.open('Foto grupal.jpg')
+    st.image(image)
     st.write("Somos un grupo de estudiantes del V ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia(UPCH), buscamos que el público en general pueda comprender de manera sencilla la magnitud y profundidad de los sismos entre 1960 y 2021 mediante un dashboard.")
     st.subheader("escribir subtitulo")
     st.write("**escribir en negrita**")
