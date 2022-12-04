@@ -32,6 +32,7 @@ with st.sidebar:
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Sismos ocurridos en el Perú para el período: 1960-2021</h1>", unsafe_allow_html=True)
     st.markdown('----')
+    st.subheader('Contexto:') 
     st.write("A nivel mundial, el Perú es uno de los países de mayor potencial sísmico debido a que forma parte del denominado Cinturón de Fuego del Pacífico, como consecuencia de los procesos de convección del manto del planeta. En este sentido, la actividad sísmica en torno a ella genera diferentes procesos de convergencia entre las placas tectónicas. En Sudamérica, las placas Nazca y Sudamericana convergen, desarrollando una geodinámica activa y, por ende, una actividad sísmica frecuente.")
     st.markdown('###')
     st.write('**Figura 1.** Cinturón de Fuego del Pacífico')
@@ -40,20 +41,29 @@ if selected == 'Inicio':
     st.caption('El cinturón de fuego del Pacífico o anillo de fuego, es una región de 40.000 kilómetros de largo, distribuidos en tres continentes. Se caracteriza por concentrar algunas de las zonas de subducción más importantes del mundo, lo que ocasiona una intensa actividad sísmica y volcánica.')
     st.markdown('###')
     
-    st.write ("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
-    st.header("Dataset")
-    
+    st.header('Catálogo Sísmico: 1960-2021')
+    st.write ("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
+    st.subheader('Dataset:')
     @st.experimental_memo
     def download_data():
-        url ="https://drive.google.com/uc?id=1XKCOchqhncJV6rm_osfHqqb7sVXX0FI4"
-        ouput ="Catalogo.xlsx"
+        url = "https://drive.google.com/uc?id=1XKCOchqhncJV6rm_osfHqqb7sVXX0FI4"
+        ouput = "Catalogo.xlsx"
         gdown.download(url,ouput,quiet = False)
-        
     download_data()
-    df_cat = pd.read_excel('Catalogo.xlsx') 
-    st.dataframe(df_cat)
-    st . header ( "Sismos ocurridos en el Perú para el período 1960-2021" )
-    st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021.")
+    df_catalogo = pd.read_excel('Catalogo.xlsx') 
+    st.dataframe(df_catalogo)
+    
+    st.subheader('Descripción del Dataset:')
+    @st.experimental_memo
+    def download_data():
+        url = "https://raw.githubusercontent.com/heidi1904/programaci-n/main/variables.csv"
+        filename = 'variables.csv'
+        urllib.request.urlretrieve(url,filename)
+        df = pd.read_csv('variables.csv')
+        return df
+    download_data()
+    st.dataframe(download_data())
+
     st.subheader("Histogramas de datos sísmicos:")
     for i in range(5,7):
         group_labels = ['y', 'x']
