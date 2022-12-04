@@ -14,8 +14,8 @@ from PIL import Image
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
     st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
-st.markdown('####')
-st.sidebar.header('Catálogo Sísmico')
+    st.markdown('####')
+    st.sidebar.header('Catálogo Sísmico')
 with st.sidebar: 
     st.markdown('####')
     selected = option_menu(
