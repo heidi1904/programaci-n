@@ -146,7 +146,7 @@ if selected == 'Mapas':
     st.write('Se encontraron', cant,'registros de sismos para su búsqueda.') 
     
     
-        st.map(data)
+    st.map(data)
 
        
     
