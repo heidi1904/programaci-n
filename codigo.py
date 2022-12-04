@@ -17,7 +17,7 @@ with open('logo.css') as f:
 with st.sidebar:  
     st.markdown('###')
     st.sidebar.header('Catálogo Sísmico: 1960-2021')
-    st.sidebar.info('Se presenta la visualización y exploración de la base de datos sísmicos elaborado por el Instituto Geofísico del Perú (IGP).')
+    st.sidebar.info('Visualización y exploración de la base de datos sísmicos elaborado por el Instituto Geofísico del Perú (IGP).')
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Mapas','Equipo'],
