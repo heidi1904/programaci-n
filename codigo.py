@@ -71,7 +71,9 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #---------------------------MAPAS-------------------------------
-df_local=pd.read_excel("Catalogo.xlsx")
+df_local=pd.read_excel("Catalogo.xlsx")}
+df_intermedia = pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/intermedia.xlsx%20-%20catalogo.csv")
+
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
     st.markdown('____')
@@ -87,9 +89,6 @@ if selected == 'Mapas':
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
     st.markdown('____')
-    
-    
-    
     #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
     @st.cache
     def localizacion_data():
@@ -105,9 +104,6 @@ if selected == 'Mapas':
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
     st.map(data_map)
-
-#---- 
-df_intermedia = pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/intermedia.xlsx%20-%20catalogo.csv")
 
     dataset = st.selectbox(
         'Seleccione una opción:',
