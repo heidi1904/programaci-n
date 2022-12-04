@@ -62,23 +62,21 @@ if selected == 'Inicio':
         
     st.subheader("Sismos registrados según magnitud entre 1960-2021.")
     st.markdown("###")
-
     bar_chart = df_catalogo.MAGNITUD.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Magnitud del sismo']
     st.bar_chart(bar_chart)
     
 #-------------------------------------------------------------------
-
 df_local=pd.read_excel("Catalogo.xlsx")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
-    st.markdown("____________________________________________________________________")
+    st.markdown('____')
     st.write("Un mapa sísmico representa la distribución espacial de los eventos sísmicos que dieron lugar en el Perú. La información obtenida fue a partir de la Plataforma Nacional de Datos Abiertos extraídos del Instituto Geofísico del Perú (IGP). Los sismos fueron clasificados según su profundidad: Superficiales, Intermedios y Profundos.")
     image = Image.open('Mapa_sismico.jpg')
     st.image(image)
     st.write("**Fuente:** MINAM ")
-    st.markdown("____________________________________________________________________")
+    st.markdown('____')
     st.write('''El Dr. Hernando Tavera, investigador científico en sismología y geofísica, también director de la Subdirección de Ciencias de la Tierra Sólida (SCTS) del Instituto Geofísico del Perú (IGP); destaca que esta información es de vital importancia para que las municipalidades tomen las medidas de prevención necesarias para reducir el Riesgo de Desastres Naturales ante peligros inminentes como los sismos e inundaciones. 
 “El mapa muestra la distribución espacial de todos los sismos ocurridos desde el año 1960… con magnitudes mayores y/o iguales a 4.0 Mw. Estos eventos fueron clasificados en función de la profundidad a la cual ocurren en superficiales, intermedios y profundos, remarcando que en nuestro país los sismos están presentes hasta profundidades del orden de 700 km”, señaló.
 ''')
@@ -95,6 +93,15 @@ if selected == 'Mapas':
             })
         return df_local
     data = localizacion_data()
+    
+    dataset = st.selectbox(
+        'Seleccione una opción:',
+        ('Profundidad superficial',
+         'Profundidad intermedia',
+         'Profundidad profunda')
+        ) 
+    
+    
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
