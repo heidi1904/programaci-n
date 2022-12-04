@@ -57,9 +57,21 @@ if selected == 'Inicio':
     
     st.subheader("Histogramas de datos sísmicos:")
     for i in range(5,7):
-        #group_labels = ['y', 'x']
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
+        
+    st.subheader("Gráfico 2. Sismos registrados (en %) según magnitud")
+    st.markdown("###")
+
+    pie_chart = df_catalogo.MAGNITUD.value_counts()
+    pie_chart = pd.DataFrame(pie_chart)
+    pie_chart = pie_chart.reset_index()
+    pie_chart.columns = ['MAGNITUD','TOTAL']
+    fig1, ax1 = plt.subplots()
+    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['MAGNITUD'], autopct='%1.1f%%')
+    ax1.axis('equal')
+    st.pyplot(fig1)
+    
 #-------------------------------------------------------------------
 
 df_local=pd.read_excel("Catalogo.xlsx")
@@ -90,7 +102,9 @@ if selected == 'Mapas':
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
-    st.map(data_map)        
+    st.map(data_map)
+    
+    
 
 #-------------------------------------------------------------------    
 if selected == 'Equipo':
