@@ -57,7 +57,7 @@ if selected == 'Inicio':
     st.subheader('Descripción del Dataset:')
     st.write('A continuación, se proporciona una descripción de las variables utilizadas en el dataset.')
     @st.experimental_memo
-    def download_data():
+    def download_data(): 
         url = "https://raw.githubusercontent.com/heidi1904/programaci-n/main/variables.csv"
         filename = 'variables.csv'
         urllib.request.urlretrieve(url,filename)
