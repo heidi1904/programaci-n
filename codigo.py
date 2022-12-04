@@ -71,7 +71,7 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #---------------------------MAPAS-------------------------------
-df_local=pd.read_excel("Catalogo.xlsx")}
+df_local=pd.read_excel("Catalogo.xlsx")
 df_intermedia = pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/intermedia.xlsx%20-%20catalogo.csv")
 
 if selected == 'Mapas':
