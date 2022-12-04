@@ -97,9 +97,8 @@ if selected == 'Mapas':
 
 #-------------------------------------------------------------------    
 if selected == 'Equipo':
-    st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
     st.markdown('____')
-    st.subheader("¿Quiénes somos?")
     st.write("Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia (UPCH), buscamos que el usuario que ingrese a nuestra página pueda revisar de forma sencilla la magnitud que registraron los sismos entre los años 1960 y 2021 mediante un dashboard.")
     image = Image.open('Foto grupal.jpg')
     st.image(image)
