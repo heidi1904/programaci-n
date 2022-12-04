@@ -55,7 +55,7 @@ if selected == 'Inicio':
     st.write('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
     st.subheader('Descripción del Dataset:')
-    st.write('A continuación, se proporciona una descripción de las variables utilizadas en el dataset.')
+    st.write('A continuación, se proporciona una descripción de las variables utilizadas en el dataset.') 
     @st.experimental_memo
     def download_data(): 
         url = "https://raw.githubusercontent.com/heidi1904/programaci-n/main/variables.csv"
