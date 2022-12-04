@@ -119,7 +119,7 @@ if selected == 'Mapas':
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
         
-     elif dataset == 'Profundidad profunda (con más de 300 km)':   
+    elif dataset == 'Profundidad profunda (con más de 300 km)':   
         option = 'profundidad profunda'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
