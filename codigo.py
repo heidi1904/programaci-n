@@ -56,7 +56,7 @@ if selected == 'Inicio':
     st.markdown('###')
     
     st.subheader("Histogramas de datos sísmicos:")
-    for i in range(5,7):
+    for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
         
