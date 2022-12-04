@@ -131,7 +131,6 @@ if selected == 'Mapas':
             })
             return df_intermedia
         data = intermedia_data()
-        st.map(data)
         st.markdown("###")
         st.dataframe(df_intermedia)
         cant = len(df_intermedia.axes[0]) 
@@ -144,9 +143,11 @@ if selected == 'Mapas':
        
     
      
-    st.write('Se encontraron', cant,'registros de sismos para su búsqueda.')    
+    st.write('Se encontraron', cant,'registros de sismos para su búsqueda.') 
     
-        
+    
+        st.map(data)
+
        
     
 
