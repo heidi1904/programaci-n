@@ -1,16 +1,13 @@
 # Proyecto Final - Programación Avanzada
 
-## Objetivo
-El objetivo del presente proyecto es permitir al usuario una visualización y exploración interactiva a la base de datos contenida en un catálogo sísmico sobre todos los sismos registrados por la Red Sísmica Nacional y percibidos por la población desde 1960 hasta 2021. El presente catálogo ha sido elaborado por la institución responsable del monitoreo de la actividad sísmica en el país, el Instituto Geofísico del Perú (IGP).
-
-Fuente del dataset utilizado: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp
-
+## Objetivo principal
+El objetivo principal del presente proyecto es permitir al usuario un acceso a una visualización y exploración interactiva de la base de datos de todos los sismos registrados por la Red Sísmica Nacional y percibidos por la población desde 1960 hasta 2021. El presente catálogo sísmico ha sido elaborado por  el Instituto Geofísico del Perú (IGP), el cual es la institución responsable del monitoreo de la actividad sísmica en el Perú.
 
 ## Equipo
 - Diaz Zamora, Maicol
-- Gutierrez Quillatupa, Nicole
-- Flores Lopez, Roxana
-- Rincon Caballero, Heidi
+- Gutierrez Quillatupa, Nicole Cecilia
+- Flores Lopez, Roxana Carolina
+- Rincon Caballero, Heidi Antonela
 
 ## Streamlit App
 Pueden visitar nuestra app exploratoria en: https://heidi1904-programaci-n-codigo-cpjd64.streamlit.app/
