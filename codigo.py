@@ -96,7 +96,7 @@ if selected == 'Mapas':
     st.markdown("###")
     dataset = st.selectbox(
         'Seleccione una opción para profundidad:',
-        ('Profundidad superficial (foco de 70 km)',
+        ('Profundidad superficial (foco de hasta 70 km)',
          'Profundidad intermedia (entre 70 y 300 km)',
          'Profundidad profunda (con más de 300 km)')
         ) 
