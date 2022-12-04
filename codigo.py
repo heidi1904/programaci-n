@@ -94,14 +94,20 @@ if selected == 'Mapas':
         return df_local
     data = localizacion_data()
     
+    st.write('''Dependiendo de la profundidad del foco de liberación de energía de un terremoto (hipocentro), es que podemos clasificarlos en tres tipos: 
+    "- Superficiales (con un foco de 70 KM de profundidad).
+    "- Intermedios (con una profundidad de entre los 70 y 300 km)
+    "- Profundos (con más de 300 km de profundidad).
+    '''
     dataset = st.selectbox(
-        'Seleccione una opción:',
+        'A continuación, eleccione una opción para profundidad:',
         ('Profundidad superficial',
          'Profundidad intermedia',
          'Profundidad profunda')
         ) 
     
     
+    #vincular         
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
