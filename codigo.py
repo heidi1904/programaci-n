@@ -103,7 +103,7 @@ if selected == 'Mapas':
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
-    st.map(data_map)
+    
 
     dataset = st.selectbox(
         'Seleccione una opción:',
@@ -131,6 +131,7 @@ if selected == 'Mapas':
             })
             return df_intermedia
         data = intermedia_data()
+        st.map(data)
         st.markdown("###")
         st.dataframe(df_intermedia)
         cant = len(df_intermedia.axes[0]) 
@@ -144,9 +145,8 @@ if selected == 'Mapas':
     
      
     st.write('Se encontraron', cant,'registros de sismos para su búsqueda.') 
+    st.map(data_map)
     
-    
-    st.map(data)
 
        
     
