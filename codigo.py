@@ -68,6 +68,11 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #-------------------------------------------------------------------
+df_superficial =  pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/superficial.csv')
+df_intermedia = pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/intermedia.csv')
+df_profunda = pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/profunda.csv')
+
+
 df_local=pd.read_excel("Catalogo.xlsx")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
@@ -93,8 +98,6 @@ if selected == 'Mapas':
             })
         return df_local
     data = localizacion_data()
-    st.markdown("###")
-    
     
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
@@ -104,25 +107,66 @@ if selected == 'Mapas':
     #---------------- pendiente
     dataset = st.selectbox(
         'Seleccione una opción:',
-        ('Profundidad superficial (foco de hasta 70 km)',
+        ('Profundidad superficial (menos de 70 km)',
          'Profundidad intermedia (entre 70 y 300 km)',
          'Profundidad profunda (con más de 300 km)')
         ) 
     option = '-'
-    if dataset == 'Profundidad superficial (foco de hasta 70 km)':
+    if dataset == 'Profundidad superficial (menos de 70 km)':
         option = 'profundidad superficial'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
+        @st.cache
+        def superficial_data():
+            df_superficial = pd.read_excel('superficial.csv')
+            df_superficial =  df_superficial.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return  df_superficial
+        data = superficial_data()
+        st.map(data)
+        st.dataframe(df_superficial)
+        cant = len(df_superficial.axes[0]) 
         
     elif dataset == 'Profundidad intermedia (entre 70 y 300 km)':   
         option = 'profundidad intermedia'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
+        @st.cache
+        def intermedia_data():
+            df_intermedia = pd.read_excel('intermedia.csv')
+            df_intermedia =  df_intermedia.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return  df_intermedia
+        data = intermedia_data()
+        st.map(data)
+        st.dataframe(df_intermedia)
+        cant = len(df_intermedia.axes[0]) 
         
     elif dataset == 'Profundidad profunda (con más de 300 km)':   
         option = 'profundidad profunda'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
+        @st.cache
+        def profunda_data():
+            df_profunda = pd.read_excel('profunda.csv')
+            df_profunda = df_profunda.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return  df_profunda
+        data = profunda_data()
+        st.map(data)
+        st.dataframe(df_profunda)
+        cant = len(df_profunda.axes[0]) 
+     
+    st.write('Se encontraron', cant,'registros de sismos para su búsqueda.')    
+    
+        
+        
      #------------   
     
     st.map(data_map)
