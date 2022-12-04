@@ -68,7 +68,7 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #-------------------------------------------------------------------
-df_superficial =  pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/superficial.csv')
+df_superficial = pd.excel('superficial.xlsx')
 df_intermedia = pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/intermedia.csv')
 df_profunda = pd.read_csv('https://raw.githubusercontent.com/heidi1904/programaci-n/main/profunda.csv')
 
@@ -116,19 +116,33 @@ if selected == 'Mapas':
         option = 'profundidad superficial'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
-        @st.cache
+        @st.experimental_memo
         def superficial_data():
-            df_superficial = pd.read_excel('superficial.csv')
-            df_superficial =  df_superficial.rename(columns={
-                'LATITUD':'lat',
-                'LONGITUD':'lon',
-            })
-            return  df_superficial
-        data = superficial_data()
-        st.map(data)
-        st.dataframe(df_superficial)
-        cant = len(df_superficial.axes[0]) 
-        
+            url = "https://drive.google.com/uc?id=16EOdn4dwYEeA4buvVwun2fzc-0c04WcO"
+            ouput = "superficial.xlsx"
+            gdown.download(url,ouput,quiet = False)
+        superficial_data()
+        df_superficial = pd.read_excel('superficial.xlsx')
+        df_superficial= df_superficial.rename(columns={
+            'LATITUD':'lat',
+            'LONGITUD':'lon',
+        })
+        return df_superficial
+    data = superficial_data()
+    st.map(data)
+    st.dataframe(df_superficial)
+    cant = len(df_superficial.axes[0]) 
+ 
+
+
+
+
+
+
+
+
+
+
     elif dataset == 'Profundidad intermedia (entre 70 y 300 km)':   
         option = 'profundidad intermedia'
         st.markdown("###")
