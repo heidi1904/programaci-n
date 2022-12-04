@@ -1,8 +1,0 @@
-Variable,Descripción
-FECHA_CORTE,Fecha de corte de información
-FECHA_UTC,"Hora universal coordinado (UTC), Es la fecha con cinco horas adelantadas con respecto a la hora local debido a que Peru se encuentra en una zona horaria UTC -5"
-HORA_UTC,"Hora universal coordinada (UTC), cinco horas adelantadas con respecto a la hora local debido a que Peru se encuentra en una zona horaria UTC -5"
-LATITUD,"Es la distancia en grados, minutos y segundos que hay con respecto al paralelo principal, que es el ecuador (0º). La latitud puede ser norte y sur"
-LONGITUD,"Es la distancia en grados, minutos y segundos que hay con respecto al meridiano principal, que es el meridiano de Greenwich (0º)."
-PROFUNDIDAD,Profundidad del foco sísmico por debajo de la superficie
-MAGNITUD,Corresponde a la cantidad de energía liberada por el sismo y esta expresada en la escala de magnitud momento Mw.
