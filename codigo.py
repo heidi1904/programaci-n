@@ -52,19 +52,16 @@ if selected == 'Inicio':
     download_data()
     df_catalogo = pd.read_excel('Catalogo.xlsx') 
     st.dataframe(df_catalogo)
-    st.write('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
+    st.caption('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
     
     st.subheader("Histogramas de datos sísmicos:")
     for i in range(5,7):
-        group_labels = ['y', 'x']
+        #group_labels = ['y', 'x']
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
-        
-        
-        
+#-------------------------------------------------------------------
 
-#-----
 df_local=pd.read_excel("Catalogo.xlsx")
 if selected == 'Mapas':
     st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
