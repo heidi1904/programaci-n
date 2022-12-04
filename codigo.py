@@ -144,7 +144,7 @@ if selected == 'Mapas':
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
-    #st.map(data_map)
+    st.map(data_map)
 
     
 #-----------------------------EQUIPO----------------------------    
