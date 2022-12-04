@@ -111,6 +111,20 @@ if selected == 'Mapas':
         option = 'profundidad superficial'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
+        @st.cache
+        def download_data():
+            df_superficial = pd.read_excel('superficial.xlsx')
+            df_superficial = df_superficial.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_superficial
+        data = download_data()
+        st.map(data)
+
+        
+        
+        
         
     
     elif dataset == 'Profundidad intermedia':
