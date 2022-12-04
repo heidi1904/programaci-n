@@ -102,12 +102,12 @@ if selected == 'Mapas':
  
     dataset = st.selectbox(
         'Seleccione una opción:',
-        ('Profundidad superficial (< 70 km)',
-         'Profundidad intermedia (entre 70 y 300 km)',
-         'Profundidad profunda (con más de 300 km)')
+        ('Profundidad superficial',
+         'Profundidad intermedia',
+         'Profundidad profunda')
         ) 
     option = '-'
-    if dataset == 'Profundidad superficial (< 70 km)':
+    if dataset == 'Profundidad superficial':
         option = 'profundidad superficial'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
@@ -129,11 +129,11 @@ if selected == 'Mapas':
     
     cant = len(df_superficial.axes[0]) 
     
-    elif dataset == 'Profundidad intermedia (entre 70 y 300 km)':
+    elif dataset == 'Profundidad intermedia':
         option = 'profundidad intermedia'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
-    elif dataset == 'Profundidad profunda (con más de 300 km)':
+    elif dataset == 'Profundidad profunda':
         option = 'profundidad profunda'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
