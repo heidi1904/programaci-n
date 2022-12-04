@@ -54,22 +54,6 @@ if selected == 'Inicio':
     st.dataframe(df_catalogo)
     st.write('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
-    st.subheader('Descripción del Dataset:')
-    st.write('A continuación, se proporciona una descripción de las variables utilizadas en el dataset.') 
-    @st.experimental_memo
-    def download_data(): 
-        url = "https://raw.githubusercontent.com/heidi1904/programaci-n/main/variables.csv"
-        filename = "variables.csv"
-        urllib.request.urlretrieve(url,filename)
-        df = pd.read_csv('variables.csv')
-        return df
-    download_data()
-    st.dataframe(download_data())
-    
-    
-
-    
-    
     
     st.subheader("Histogramas de datos sísmicos:")
     for i in range(5,7):
