@@ -1,6 +1,6 @@
 Variable,Descripción
 FECHA_CORTE,Fecha de corte de información.
-FECHA_UTC,Hora universal coordinado (UTC), fecha con cinco horas adelantadas con respecto a la hora local.
+FECHA_UTC,"Hora universal coordinado (UTC), fecha con cinco horas adelantadas con respecto a la hora local."
 HORA_UTC,"Hora universal coordinada (UTC), cinco horas adelantadas con respecto a la hora local."
 LATITUD,"Distancia en grados, minutos y segundos con respecto al paralelo principal (Ecuador (0º))."
 LONGITUD,"Distancia en grados, minutos y segundos con respecto al meridiano principal (meridiano de Greenwich (0º))."
