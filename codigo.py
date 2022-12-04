@@ -43,6 +43,7 @@ if selected == 'Inicio':
     
     st.subheader('Dataset: Catalogo Sísmico 1960-2021')
     st.write("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
+    st.caption('Fecha de última actualización: 31/12/2021, 20:00 (UTC-05:00)')
     @st.experimental_memo
     def download_data():
         url = "https://drive.google.com/uc?id=1XKCOchqhncJV6rm_osfHqqb7sVXX0FI4"
@@ -51,7 +52,6 @@ if selected == 'Inicio':
     download_data()
     df_catalogo = pd.read_excel('Catalogo.xlsx') 
     st.dataframe(df_catalogo)
-    st.caption('Fecha de última actualización: 31/12/2021, 20:00 (UTC-05:00)')
     st.write('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
     st.subheader('Descripción del Dataset:')
@@ -59,12 +59,14 @@ if selected == 'Inicio':
     @st.experimental_memo
     def download_data(): 
         url = "https://raw.githubusercontent.com/heidi1904/programaci-n/main/variables.csv"
-        filename = 'variables.csv'
+        filename = "variables.csv"
         urllib.request.urlretrieve(url,filename)
         df = pd.read_csv('variables.csv')
         return df
     download_data()
     st.dataframe(download_data())
+    
+    
 
     
     
