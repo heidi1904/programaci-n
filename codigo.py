@@ -45,7 +45,7 @@ if selected == 'Inicio':
     image = Image.open('IGP.png')
     st.image(image)
     st.subheader('Dataset: Catalogo Sísmico 1960-2021')
-    st.write("A continuación, se presenta la base de datos sísmicos que contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud.")
+    st.write("Esta base de datos sísmicos contiene todos los parámetros que caracterizan a un sismo, calculados en las mismas condiciones a fin de constituirse como una base homogénea: fecha, hora, latitud, longitud, profundidad y magnitud. En este dataset se podrá encontrar el Catálogo de Sismos Instrumentales para el período de 1960 – 2021 con datos proporcionados por el Instituto Geofísico del Perú (IGP).")
     st.caption('Fecha de última actualización: 31/12/2021, 20:00 (UTC-05:00)')
     @st.experimental_memo
     def download_data():
@@ -89,6 +89,22 @@ if selected == 'Mapas':
     st.image(image)
     st.write("**Fuente:** Instituto Geofísico del Perú")
     st.markdown('____')
+    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
+    @st.cache
+    def localizacion_data():
+        df_local = pd.read_excel('Catalogo.xlsx')
+        df_local = df_local.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+        return df_local
+    data = localizacion_data()
+    
+    data1=data[data["PROFUNDIDAD"]<=60]
+    #data2=data[data["PROFUNDIDAD"]<=300]
+    data_map=data1[["lat","lon"]]
+    
+
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Profundidad superficial',
@@ -118,35 +134,23 @@ if selected == 'Mapas':
         st.map(data)
         st.markdown("###")
         st.dataframe(df_intermedia)
-        n = len(df_intermedia.axes[0])
-        st.write('Se encontraron', n,'registros de sismos para su búsqueda.') 
+        cant = len(df_intermedia.axes[0]) 
+            
 
-       
     elif dataset == 'Profundidad profunda':
         option = 'profundidad profunda'
         st.markdown("###")
         st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
-        
-        
        
-    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
-    @st.cache
-    def localizacion_data():
-        df_local = pd.read_excel('Catalogo.xlsx')
-        df_local = df_local.rename(columns={
-                'LATITUD':'lat',
-                'LONGITUD':'lon',
-            })
-        return df_local
-    data = localizacion_data()
-
     
-    data1=data[data["PROFUNDIDAD"]<=60]
-    #data2=data[data["PROFUNDIDAD"]<=300]
-    data_map=data1[["lat","lon"]]
+     
+    st.write('Se encontraron', cant,'registros de sismos para su búsqueda.') 
     st.map(data_map)
-
     
+
+       
+    
+
 #-----------------------------EQUIPO----------------------------    
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
