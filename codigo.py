@@ -1,7 +1,7 @@
 #$ pip install streamlit --upgrade 
 import streamlit as st
 import pandas as pd
-import numpy as np
+import numpy as np 
 import urllib.request
 from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
