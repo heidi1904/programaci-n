@@ -99,6 +99,8 @@ if selected == 'Mapas':
             })
         return df_local
     data = localizacion_data()
+    st.map(data_map)
+
     
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
@@ -134,9 +136,10 @@ if selected == 'Mapas':
         st.map(data)
         st.markdown("###")
         st.dataframe(df_intermedia)
-        cant = len(df_intermedia.axes[0]) 
-            
+        n = len(df_intermedia.axes[0])
+        st.write('Se encontraron', n,'registros de sismos para su búsqueda.') 
 
+       
     elif dataset == 'Profundidad profunda':
         option = 'profundidad profunda'
         st.markdown("###")
@@ -144,8 +147,6 @@ if selected == 'Mapas':
        
     
      
-    st.write('Se encontraron', cant,'registros de sismos para su búsqueda.') 
-    st.map(data_map)
     
 
        
