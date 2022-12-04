@@ -12,9 +12,9 @@ from PIL import Image
 
 #-------------------------------------------------------------------
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
-with open('upch.css') as f:
-    st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
-with st.sidebar: 
+with open('logo.css') as f:
+    st.markdown(f'<style>{f.read()}</logo>', unsafe_allow_html=True)
+with st.sidebar:  
     st.markdown('####')
     selected = option_menu(
         menu_title = 'Menú',
