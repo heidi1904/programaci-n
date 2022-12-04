@@ -95,12 +95,11 @@ if selected == 'Mapas':
     data = localizacion_data()
     st.markdown("###")
     dataset = st.selectbox(
-        'A continuación, eleccione una opción para profundidad:',
-        ('Profundidad superficial',
-         'Profundidad intermedia',
-         'Profundidad profunda')
+        'Seleccione una opción para profundidad:',
+        ('Profundidad superficial (foco de 70 km)',
+         'Profundidad intermedia (entre 70 y 300 km)',
+         'Profundidad profunda (con más de 300 km)')
         ) 
-    st.caption('Donde: superficiales (foco de 70 km de profundidad), intermedios (profundidad de entre 70 y 300 km) y profundos (con más de 300 km de profundidad).')
     
     #vincular         
     data1=data[data["PROFUNDIDAD"]<=60]
