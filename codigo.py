@@ -15,7 +15,7 @@ with open('upch.css') as f:
     st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
 with st.sidebar: 
     st.markdown("###")
-    st.sidebar.header('Programación Avanzada')
+    st.sidebar.header('Catálogo Sismico')
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Mapas','Equipo'],
