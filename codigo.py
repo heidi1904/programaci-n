@@ -58,7 +58,7 @@ if selected == 'Inicio':
     st.caption('Fuente del dataset: https://www.datosabiertos.gob.pe/dataset/catalogo-sismico-1960-2021-igp')
     st.markdown('###')
     
-    st.subheader("Histogramas de sismos entre 1960-2021.")
+    st.subheader("Histogramas de sismos entre 1960-2021")
     st.write('**Según profundidad:**')
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
