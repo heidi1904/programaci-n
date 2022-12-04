@@ -86,13 +86,6 @@ if selected == 'Equipo':
     st.markdown("____________________________________________________________________")
     st.subheader("¿Quiénes somos?")
     st.write("Somos un grupo de estudiantes del V ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia(UPCH), buscamos que el público en general pueda comprender de manera sencilla la magnitud y profundidad de los sismos entre 1960 y 2021 mediante un dashboard.")
-    if selected == 'Mapas':
-        st.markdown("<h1 style ='text-align: center'>Mapa sísmico del Perú</h1>", unsafe_allow_html=True)
-        st.markdown("____________________________________________________________________")
-        st.write("Un mapa sísmico representa la distribución espacial de los eventos sísmicos que dieron lugar en el Perú. La información obtenida fue a partir de la Plataforma Nacional de Datos Abiertos extraídos del Instituto Geofísico del Perú (IGP). Los sismos fueron clasificados según su profundidad: Superficiales, Intermedios y Profundos.")
-        image = Image.open('Mapa_sismico.jpg')
-        st.image(image)
-        st.write("**Fuente:** MINAM ")
     st.subheader("escribir subtitulo")
     st.write("**escribir en negrita**")
     st.caption('info en gris')
