@@ -31,7 +31,7 @@ with st.sidebar:
 #-------------------------------------------------------------------
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Sismos ocurridos en el Perú para el período: 1960-2021</h1>", unsafe_allow_html=True)
-    st.markdown('----')
+    st.markdown('____')
     st.subheader('Contexto:') 
     st.write("A nivel mundial, el Perú es uno de los países de mayor potencial sísmico debido a que forma parte del denominado Cinturón de Fuego del Pacífico, como consecuencia de los procesos de convección del manto del planeta. En este sentido, la actividad sísmica en torno a ella genera diferentes procesos de convergencia entre las placas tectónicas. En Sudamérica, las placas Nazca y Sudamericana convergen, desarrollando una geodinámica activa y, por ende, una actividad sísmica frecuente.")
     st.markdown('###')
@@ -98,7 +98,7 @@ if selected == 'Mapas':
 #-------------------------------------------------------------------    
 if selected == 'Equipo':
     st.markdown("<h1 style ='text-align: center'>Equipo</h1>", unsafe_allow_html=True)
-    st.markdown("____________________________________________________________________")
+    st.markdown('____')
     st.subheader("¿Quiénes somos?")
     st.write("Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia (UPCH), buscamos que el usuario que ingrese a nuestra página pueda revisar de forma sencilla la magnitud que registraron los sismos entre los años 1960 y 2021 mediante un dashboard.")
     image = Image.open('Foto grupal.jpg')
