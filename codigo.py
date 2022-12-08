@@ -102,58 +102,7 @@ if selected == 'Mapas':
     
     #en el mismo excel del catalogo se puede filtrar para profundidad
     #pendiente vincular los archivos a cada opcion para que los lea 
-    dataset = st.selectbox(
-        'Seleccione una opción:',
-        ('Profundidad superficial',
-         'Profundidad intermedia',
-         'Profundidad profunda')
-        ) 
-    option = '-'
-    if dataset == 'Profundidad superficial':
-        option = 'profundidad superficial'
-        st.markdown("###")
-        st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
-        
-    
-    elif dataset == 'Profundidad intermedia':
-        option = 'profundidad intermedia'
-        st.markdown("###")
-        st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
-        @st.cache
-        def intermedia_data():
-            df_intermedia = pd.read_csv('intermedia.xlsx%20-%20catalogo.csv')
-            df_intermedia = df_intermedia.rename(columns={
-                'LATITUD':'lat',
-                'LONGITUD':'lon',
-            })
-            return df_intermedia
-        data = intermedia_data()
-        st.map(data)
-        st.markdown("###")
-        st.dataframe(df_intermedia)
-        #n = len(df_intermedia.axes[0])
-        #st.write('Se encontraron', n,'registros de sismos para su búsqueda.') 
 
-       
-    elif dataset == 'Profundidad profunda':
-        option = 'profundidad profunda'
-        st.markdown("###")
-        st.subheader('**Sismos registrados con '+option+' durante 1960-2021.**')
-        
-        
-       
-    #df_local=pd.read_csv("https://raw.githubusercontent.com/heidi1904/programaci-n/main/Catalogo.xlsx%20-%20Catalogo1960_2021.csv")
-    @st.cache
-    def localizacion_data(): 
-        df_local = pd.read_excel('Catalogo.xlsx')
-        df_local = df_local.rename(columns={
-                'LATITUD':'lat',
-                'LONGITUD':'lon',
-            })
-        return df_local
-    data = localizacion_data()
-
-    
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
