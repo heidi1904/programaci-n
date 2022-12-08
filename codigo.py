@@ -100,6 +100,7 @@ if selected == 'Mapas':
     st.write("**Fuente:** Instituto Geofísico del Perú")
     st.markdown('____')
     
+    st.subheader("Sismos registrados en el Perú durante el período 1960-2021")
     #en el mismo excel del catalogo se puede filtrar para profundidad
     #pendiente vincular los archivos a cada opcion para que los lea 
     @st.cache
