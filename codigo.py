@@ -62,6 +62,7 @@ if selected == 'Inicio':
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
+        st.write("El gráfico 1 nos muestra un histograma en base a la profundidad donde dando click en las barras se aprecia la medición exacta de la profundidad y el count respectivo.")
         
     st.subheader("Sismos registrados según magnitud entre 1960-2021.")
     st.markdown("###")
