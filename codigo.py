@@ -64,7 +64,7 @@ if selected == 'Inicio':
     st.write("**Profundidad superficial:** Su foco se encuentra entre los 70 km de profundidad, comúnmente son los más destructivos porque impacta directamente con la superficie y en lo general su hipocentro se encuentra entre los 10 y 25 km de profundidad.")
     st.write("**Profundidad intermedia:** Con profundidades entre los 70 y 300 km.")
     st.write("**Profundidad profunda:** El foco se halla a más de 300 km de profundidad, sobrepasan la litósfera, casi no se sienten por lo lejos que se encuentran de la superficie y también son poco frecuentes.")
-    image = Image.open('Hipocentro.PNG')
+    image = Image.open('sismo.png')
     st.image(image)
     
     for i in range(5,6):
