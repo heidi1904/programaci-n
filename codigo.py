@@ -59,6 +59,12 @@ if selected == 'Inicio':
     st.markdown('###')
     
     st.subheader("Histograma de sismos según profundidad entre 1960-2021.")
+    st.write("Dependiendo de la profundidad del hipocentro de energía liberada en un terremoto, es que podemos clasificarlos en tres tipos: superficiales, intermedios y profundos.")
+    st.write("El hipocentro o foco es el punto donde se libera la energía en un terremoto. Por su parte, el epicentro es el lugar de la superficie terrestre que se ubica exactamente sobre el hipocentro del terremoto. El tipo de magnitud se registra de acuerdo a la profundidad característica que tuvo lugar el sismo. Para esto, podemos clasificar en tres tipos los terremotos:")
+    st.write("**Profundidad superficial:** Su foco se encuentra entre los 70 km de profundidad, comúnmente son los más destructivos porque impacta directamente con la superficie y en lo general su hipocentro se encuentra entre los 10 y 25 km de profundidad.")
+    st.write("**Profundidad intermedia:** Con profundidades entre los 70 y 300 km.")
+    st.write("**Profundidad profunda:** El foco se halla a más de 300 km de profundidad, sobrepasan la litósfera, casi no se sienten por lo lejos que se encuentran de la superficie y también son poco frecuentes.")
+
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
