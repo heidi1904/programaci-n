@@ -62,7 +62,7 @@ if selected == 'Inicio':
     for i in range(5,6):
         fig = px.histogram(df_catalogo, df_catalogo.columns[i])
         st.plotly_chart(fig, use_container_width=True)
-    st.caption("**Gráfico 1.** Histograma de frecuencia de sismos en función de la prufundidad de los focos sismicos.")
+    st.write("**Gráfico 1.** Histograma de frecuencia de sismos en función de la prufundidad de los focos sismicos.")
     
     st.subheader("Sismos registrados según magnitud entre 1960-2021.")
     st.markdown("###")
@@ -70,7 +70,7 @@ if selected == 'Inicio':
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Magnitud del sismo']
     st.bar_chart(bar_chart)
-    st.caption("**Gráfico 2.** Histograma de frecuencia de sismos en función de los rangos de magnitud.")
+    st.write("**Gráfico 2.** Histograma de frecuencia de sismos en función de los rangos de magnitud.")
     
 #---------------------------MAPAS-------------------------------
 df_local=pd.read_excel("Catalogo.xlsx")
