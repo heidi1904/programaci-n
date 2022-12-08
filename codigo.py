@@ -102,7 +102,15 @@ if selected == 'Mapas':
     
     #en el mismo excel del catalogo se puede filtrar para profundidad
     #pendiente vincular los archivos a cada opcion para que los lea 
-
+    @st.cache
+    def localizacion_data(): 
+        df_local = pd.read_excel('Catalogo.xlsx')
+        df_local = df_local.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+        return df_local
+    data = localizacion_data()
     data1=data[data["PROFUNDIDAD"]<=60]
     #data2=data[data["PROFUNDIDAD"]<=300]
     data_map=data1[["lat","lon"]]
