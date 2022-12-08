@@ -125,4 +125,5 @@ if selected == 'Equipo':
     st.write("Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia (UPCH), buscamos que el usuario que ingrese a nuestra página pueda revisar de forma sencilla la magnitud que registraron los sismos entre los años 1960 y 2021 mediante un dashboard.")
     image = Image.open('Foto_grupal.jpg')
     st.image(image)
+    st.caption('Estudiantes de la **Universidad Peruana Cayetano Heredia**')
   
